@@ -1,0 +1,73 @@
+declare is_prime(n);
+declare print_num(n);
+
+main:
+
+    msg = "Enter the number that you want to find primes until (inclusive): \n>>\t";
+
+    num = 0;
+
+    print(msg);
+
+    c = getc();
+    outc(c);
+    
+
+    while c >= '0' and c <= '9':
+        num = num * 10 + (c - '0');
+        c = getc();
+        outc(c);
+    end
+
+    i = 2;
+    outc('\n');
+    # There are more efficient ways to do this but whatever
+    while i < num + 1:
+        if is_prime(i):
+            print_num(i);
+            outc('\n');
+        end
+
+        i = i + 1;
+    end
+
+end
+
+
+def is_prime(n):
+
+    if n <= 1:
+        return 0;
+    end
+
+    i = 2;
+
+    while i * i <= n:
+        if n % i == 0:
+            return 0;
+        end
+
+        i = i + 1;
+    end
+
+    return 1;
+end
+
+def print_num(n):
+    a = 10000;
+    dig = 0;
+
+    if n < 0:
+        outc('-');
+        n = -n;
+    end
+
+    
+
+    while a:
+        dig = n / a;
+        n = n % a;
+        a = a / 10;
+        outc(dig + '0');
+    end
+end

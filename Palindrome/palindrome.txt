@@ -1,0 +1,48 @@
+# Checks if a string is a palindrome
+
+declare is_palin(str, len);
+
+main:
+    buffer = array(102);
+    msg = "Enter a string, then press <ENTER>:\n";
+    print(msg);
+
+    i = 0;
+    c = getc();
+    outc(c);
+
+    while i < 100 and not (c == '\n'):
+        mem(buffer + i) = c;
+        i = i + 1;
+        c = getc();
+        outc(c);
+    end
+
+    mem(buffer + i) = 0;
+
+    msg = 0;
+
+    if is_palin(buffer, i):
+        msg = "\nYes.";
+    else:
+        msg = "\nNo.";
+    end
+
+    print(msg);
+end
+
+def is_palin(str, len):
+    i = 0;
+    j = len - 1;
+
+    while i < j and mem(str + i) == mem(str + j):
+        i =i + 1;
+        j = j - 1;
+    end
+
+    if i < j:
+        return 0;
+    end
+
+    return 1;
+end

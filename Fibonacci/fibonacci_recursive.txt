@@ -1,0 +1,63 @@
+# Recursive implementation of the Fibonacci series
+
+declare fibo(a);
+declare print_num(a);
+
+main:
+
+    msg = "Enter which term you want to find the Fibonacci number of: \n>>\t";
+
+    num = 0;
+
+    print(msg);
+
+    c = getc();
+    outc(c);
+    
+
+    while c >= '0' and c <= '9':
+        num = num * 10 + (c - '0');
+        c = getc();
+        outc(c);
+    end
+
+    res = fibo(num);
+
+    print_num(res);
+    outc('\n');
+
+end
+
+def print_num(n):
+    a = 10000;
+    dig = 0;
+
+    if n < 0:
+        outc('-');
+        n = -n;
+    end
+
+    
+
+    while a:
+        dig = n / a;
+        n = n % a;
+        a = a / 10;
+        outc(dig + '0');
+    end
+end
+
+def fibo(n):
+    # t0 = 0
+    # t1 = 1
+    # t(n) = t(n - 1) + t(n - 2)
+
+    if n < 1:
+        return 0;
+    elif n == 1:
+        return 1;
+    end
+
+    return fibo(n - 1) + fibo(n - 2);
+
+end

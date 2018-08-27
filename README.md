@@ -9,4 +9,4 @@ A collection of LC3 programs that showcase the LC3's powers for the next Google 
 
 
 ## Source Files
-Some assembly files are accompanied by the original pre-compilation source code. These source files were compiled by the [transmogrifier]().
+Some assembly files are accompanied by the original pre-compilation source code. These source files were compiled by the [transmogrifier](https://github.com/kauboy26/transmogrifier).
